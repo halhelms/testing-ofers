@@ -1,0 +1,27 @@
+<h1>Listing offers</h1>
+
+<table>
+  <tr>
+    <th>Text</th>
+    <th>For sex</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @offers.each do |offer| %>
+  <tr>
+    <td><%= offer.text %></td>
+    <td><%= offer.for_sex %></td>
+    <td><%= offer.value %></td>
+    <td><%= link_to 'Show', offer %></td>
+    <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
+    <td><%= link_to 'Destroy', offer, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Offer', new_offer_path %>
